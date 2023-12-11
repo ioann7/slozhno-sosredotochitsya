@@ -97,7 +97,7 @@
   color: var(--menu-btn-color);
 }
 
-.header__theme-menu-button:hover { 
+.header__theme-menu-button:hover {
   outline: 1px solid currentColor;
 }
 
