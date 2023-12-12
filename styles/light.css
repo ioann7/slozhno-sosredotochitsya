@@ -8,6 +8,7 @@
   --content-title-color: #353430;
   --content-color: #353430;
   --menu-btn-color: #353430;
+  --shadow-1024: #FF0070;
 }
 
 .theme_light .header__decor {
@@ -25,6 +26,7 @@
     --content-title-color: #353430;
     --content-color: #353430;
     --menu-btn-color: #353430;
+    --shadow-1024: #FF0070;
   }
 
   .theme_auto .header__decor {

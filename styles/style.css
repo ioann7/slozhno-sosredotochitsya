@@ -12,6 +12,10 @@
   text-shadow: max(2px, 0.035em) max(2px, 0.035em) 0 var(--accent-color);
 }
 
+.link {
+  transition: box-shadow 0.4s;
+}
+
 .link:hover {
   box-shadow: 0 1px 0 currentColor;
 }
@@ -39,7 +43,7 @@
   inset-block-start: var(--main-indent);
   inline-size: 25px;
   block-size: 25px;
-  border: 1px solid currentColor;
+  border: 1px solid var(--menu-btn-color);
   border-inline-start: none;
   border-block-end: none;
 }
@@ -51,7 +55,7 @@
   inset-block-end: var(--main-indent);
   inline-size: 25px;
   block-size: 25px;
-  border: 1px solid currentColor;
+  border: 1px solid var(--menu-btn-color);
   border-inline-end: none;
   border-block-start: none;
 }
@@ -95,10 +99,12 @@
   padding: 1.5px 13px 3px 13px;
   cursor: pointer;
   color: var(--menu-btn-color);
+  outline: 1px solid transparent;
+  transition: outline-color 0.4s;
 }
 
 .header__theme-menu-button:hover {
-  outline: 1px solid currentColor;
+  outline-color: var(--menu-btn-color);
 }
 
 .header__theme-menu-button:focus {
@@ -251,6 +257,10 @@
     grid-column: 2;
   }
 
+  .content__article.dynamic { 
+    grid-column: 1 / 3; 
+  }
+
   .content__images-block__image:nth-child(1) {
     grid-column: 1 / 3;
     grid-row: 1;
@@ -278,17 +288,25 @@
 
 }
 
-/* tablet */
-@media (768px <= width < 1024px) {
-
-  .content__article.dynamic {
-    grid-column: 1 / 3;
-  }
-
-}
-
 /* desktop */
 @media (width >= 1024px) {
+
+  .header__theme-menu {
+    justify-self: center;
+    align-self: start;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+  .title.text-shadow {
+    text-shadow: max(2px, 0.035em) max(2px, 0.035em) 0 var(--shadow-1024);
+  }
+
+  .content__block {
+    grid-template-columns: 0.97fr 2fr;
+}
 
   .content__block.dynamic {
     grid-template-columns: repeat(3, 1fr);
@@ -299,13 +317,8 @@
     grid-row: 2;
   }
 
-  .header__theme-menu {
-    justify-self: center;
-    align-self: start;
-  }
-
-  .header__theme-menu-list {
-    flex-direction: row;
+  .footer-shadow {
+    text-shadow: 2px 2px 0px var(--shadow-1024);
   }
 
 }
